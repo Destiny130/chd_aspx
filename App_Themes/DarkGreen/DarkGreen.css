@@ -1,0 +1,468 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+body {
+    background-color: #587993;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    padding: 3px;
+    margin: auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    background-color: #2f4879;
+}
+
+h4 {
+    font-size: 17px;
+}
+
+/*全局样式*/
+
+.button {
+    padding: 0px 5px;
+}
+
+.textleft {
+    text-align: left;
+}
+
+.textright {
+    text-align: right;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.h3Border {
+    border: 1px solid #2f4879;
+}
+
+.table50 {
+    width: 50%;
+    margin: auto;
+}
+
+.table90 {
+    width: 90%;
+    margin: auto;
+}
+
+.table98 {
+    width: 98%;
+    margin: auto;
+}
+
+.table100 {
+    width: 100%;
+    margin: auto;
+}
+
+.padding5 {
+    padding: 5px;
+}
+
+.padding10 {
+    padding: 10px;
+}
+
+.marginauto {
+    margin: auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/*表格样式*/
+.borderH {
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid black;
+    background-color: #2f4879;
+    padding: 3px;
+}
+
+.border {
+    border: 1px solid black;
+    background-color: #bccad6;
+}
+
+.borderdeepcolor {
+    border: 1px solid black;
+    background-color: #7c98ae;
+}
+
+.borderSubH {
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid black;
+    color: white;
+    background-color: #2f4879;
+    padding: 3px;
+}
+/*表格样式*/
+
+/*全局样式*/
+
+.chdHeader {
+    width: 90%;
+    margin-left: 85px;
+}
+
+
+
+#chdlogo1 {
+    width: auto;
+}
+
+#donate {
+    position: relative;
+    top: 25px;
+    width: 170px;
+    text-align: right;
+}
+
+#nav {
+    width: 90%;
+    margin-left: 85px;
+    min-width: 1100px; /*min width*/
+    border: 1px solid black;
+    background-color: #7c98ae;
+}
+
+#navBlock {
+    text-align: center;
+    width: auto;
+}
+
+#navigation {
+    margin-top: 13px;
+}
+
+    #navigation li a {
+        border: 1px solid white;
+        background-color: #dedede;
+        margin-right: 1px;
+        margin-left: -3.5px;
+        padding: 3px 7px;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: bold;
+        font-family: verdana;
+        font-variant: normal;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        color: black;
+    }
+
+        #navigation li a:hover {
+            text-decoration: underline;
+            background-color: #79bdff;
+        }
+
+#navigation {
+    display: block;
+}
+
+    #navigation li {
+        display: inline;
+    }
+
+#detailsTable {
+    background-color: #bccad6;
+    width: 98%;
+    border: 1px solid black;
+    margin: 1px 10px 10px 10px;
+}
+
+#navLeft {
+    width: auto;
+    padding: 3px;
+}
+
+#navRight {
+    width: 350px;
+    text-align: right;
+    padding: 3px;
+}
+
+#mainContent {
+    background-color: #7c98ae;
+    width: 90%;
+    border: 1px solid black;
+    margin-left: 85px;
+    min-width: 1100px; /*min width*/
+    margin-bottom: 10px;
+}
+
+#footer {
+    width: 95%;
+    text-align: center;
+    margin: auto;
+}
+/*上面是母页*/
+
+
+
+
+.userinfo_right a {
+    text-decoration: none;
+    color: black;
+}
+
+.invitetable {
+    width: auto;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.indextable {
+    width: 90%;
+    margin: auto;
+}
+
+.sitedatades {
+    text-align: right;
+    width: 30%;
+    border: 1px solid;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.sitedatacon {
+    text-align: left;
+    width: 20%;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.inviteh3 {
+    text-align: center;
+    width: auto;
+    background-color: #2f4879;
+    font-size: 16px;
+}
+
+.invitetable1 {
+    text-align: left;
+    width: auto;
+    margin-left: 40px;
+}
+
+.invitetr1 td {
+    background-color: #2f4879;
+    border: 1px solid black;
+}
+
+.invitetr2 td {
+    background-color: #bccad6;
+    border: 1px solid black;
+}
+
+.fh td {
+    font-family: 'Microsoft Yahei','Simsun';
+    font-weight: bold;
+    padding: 4px;
+    border: 1px solid black;
+    color: white;
+    background-color: #2f4879;
+}
+
+.forumheader {
+    font-family: 'Microsoft Yahei','Simsun';
+    font-weight: bold;
+    padding: 4px;
+    border: 1px solid black;
+    color: white;
+    background-color: #2f4879;
+}
+
+.forumlogo1 {
+    width: 36px;
+    margin: 5px;
+}
+
+.fc1 {
+    text-align: left;
+    width: auto;
+}
+
+.fc2 {
+    text-align: center;
+    width: 33px;
+}
+
+.fc3 {
+    text-align: center;
+    width: 41px;
+}
+
+.fc4 {
+    text-align: left;
+    width: 300px;
+}
+
+.fc5 {
+    text-align: left;
+    width: 90px;
+}
+
+.fco td {
+    background-color: #bccad6;
+}
+
+.bonusrules {
+    margin: 10px 2px 10px 60px;
+}
+
+    .bonusrules li {
+        margin: 10px 1px;
+    }
+
+#selfassessTable {
+    width: 600px;
+    margin: auto;
+    background-color: #363f48;
+    color: white;
+    text-align: center;
+}
+
+    #selfassessTable tr td {
+        padding: 10px;
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+.selfTable {
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    background-color: #bccad6;
+    text-align: center;
+}
+
+#selfrules {
+    text-align: left;
+    padding: 20px 0px 20px 45px;
+}
+
+    #selfrules ul {
+        padding-left: 60px;
+    }
+
+        #selfrules ul li {
+            font-weight: bold;
+            padding: 3px;
+        }
+
+.selfblank {
+    width: 20px;
+}
+
+.MUEVI1 {
+    font-family: 'Microsoft Yahei','Simsun';
+    color: white;
+    font-size: 26px;
+    font-weight: lighter;
+    width: 180px;
+    height: 65px;
+    background-color: #2f4879;
+}
+
+.MUEVI2 {
+    width: 180px;
+    height: 37px;
+    color: #8394ae;
+    font-size: 16px;
+    background-color: #3f516c;
+}
+
+.taskdes {
+    font-weight: bold;
+    color: #364762;
+    height: 300px;
+    background-color: white;
+    line-height: 32px;
+}
+
+.entertask {
+    width: 100px;
+    height: 30px;
+}
+
+#taskdetails {
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+    background-color: white;
+}
+
+#subtitlerules {
+    margin: 10px 0px 10px 50px;
+    line-height: 28px;
+}
+
+#uploadsubtitle tr td {
+    border: 1px solid black;
+    background-color: #7c98ae;
+}
+
+/*添加候选样式*/
+.offeraddleft {
+    text-align: right;
+    border: 1px solid black;
+    background-color: #bccad6;
+    width: 60px;
+    padding: 4px;
+    font-weight: bold;
+}
+
+.offeraddright {
+    text-align: left;
+    border: 1px solid black;
+    background-color: #bccad6;
+    width: 1000px;
+    padding: 8px;
+}
+/*添加候选样式*/
+
+.CheckBoxListT {
+    float: left;
+}
+
+    .CheckBoxListT td {
+        width: 100px;
+    }
+
+.ItemContainer {
+    width: 90%;
+    list-style-type: none;
+}
+
+
+.forumlogo1 {
+    background-image: url('images/forumlogo.png');
+    background-repeat: no-repeat;
+    padding-left: 45px;
+    background-size: 36px;
+    background-position: 4px 8px;
+}

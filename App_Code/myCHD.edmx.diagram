@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b88d4f3ecf74f9a8382940661335461" Name="Diagram1" ShowGrid="false" SnapToGrid="false" ZoomLevel="101">
+        <EntityTypeShape EntityType="myCHDModel.Application" Width="1.5" PointX="0.75" PointY="5.65125272623698" />
+        <EntityTypeShape EntityType="myCHDModel.Forum" Width="1.5" PointX="5.75" PointY="1.2259216715494792" />
+        <EntityTypeShape EntityType="myCHDModel.ForumReply" Width="1.5" PointX="10.25" PointY="1.0411275634765622" />
+        <EntityTypeShape EntityType="myCHDModel.Membership" Width="1.5000000000000004" PointX="3.0000005000000005" PointY="4.2652969156901044" />
+        <EntityTypeShape EntityType="myCHDModel.OfferTorrent" Width="1.5" PointX="12" PointY="5.1653992513020839" />
+        <EntityTypeShape EntityType="myCHDModel.Profile" Width="1.4999999999999991" PointX="7.5000004999999987" PointY="8.4647195231119774" />
+        <EntityTypeShape EntityType="myCHDModel.Role" Width="1.5" PointX="3" PointY="11.278186319986975" />
+        <EntityTypeShape EntityType="myCHDModel.Torrent" Width="1.5" PointX="12" PointY="8.9443917643229227" />
+        <EntityTypeShape EntityType="myCHDModel.TorrentComment" Width="1.5" PointX="14.25" PointY="9.3139799804687584" />
+        <EntityTypeShape EntityType="myCHDModel.Ttype" Width="1.5" PointX="9.75" PointY="7.701674886067714" />
+        <EntityTypeShape EntityType="myCHDModel.User" Width="1.5" PointX="5.2500005" PointY="6.9863666585286452" />
+        <EntityTypeShape EntityType="myCHDModel.ViewForum" Width="1.5" PointX="8" PointY="0.94873050944010417" />
+        <AssociationConnector Association="myCHDModel.MembershipEntity_Application" />
+        <AssociationConnector Association="myCHDModel.RoleEntity_Application" />
+        <AssociationConnector Association="myCHDModel.User_Application" />
+        <AssociationConnector Association="myCHDModel.FK_ViewForum_Forum" />
+        <AssociationConnector Association="myCHDModel.FK_ForumReply_ViewForum" />
+        <AssociationConnector Association="myCHDModel.MembershipEntity_User" />
+        <AssociationConnector Association="myCHDModel.FK_OfferTorrent_Ttype" />
+        <AssociationConnector Association="myCHDModel.ProfileEntity_User" />
+        <AssociationConnector Association="myCHDModel.FK_Torrent_Ttype" />
+        <AssociationConnector Association="myCHDModel.FK_TorrentComment_Torrent" />
+        <AssociationConnector Association="myCHDModel.UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

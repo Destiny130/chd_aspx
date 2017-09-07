@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/Layout.master" AutoEventWireup="true" CodeFile="UsercpLayout.master.cs" Inherits="MasterPages_UsercpLayout" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent1" runat="Server">
+    <br />
+    <div class="table90 textcenter">
+        <ul id="navigation">
+            <li>
+                <a href="../NavigationViews/Usercp.aspx">设 定 首 页</a>
+            </li>
+            <li>
+                <a href="../UserControlPanel/PersonalSetting.aspx">个 人 设 定</a>
+            </li>
+            <li>
+                <a href="../UserControlPanel/TrackSetting.aspx">网 站 设 定</a>
+            </li>
+            <li>
+                <a href="../UserControlPanel/ForumSetting.aspx">论 坛 设 定</a>
+            </li>
+            <li>
+                <a href="../UserControlPanel/SecuritySetting.aspx">安 全 设 定</a>
+            </li>
+        </ul>
+    </div>
+    <asp:ContentPlaceHolder runat="server" ID="UserCPHolder"></asp:ContentPlaceHolder>
+</asp:Content>
+
