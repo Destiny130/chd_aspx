@@ -56,19 +56,19 @@ public partial class Views_Torrents : BasePage
     {
         if (search != null && choosenType.catList != null)
         {
-            return myEntities.Torrents.Where(t => (t.Title.Contains(search) && choosenType.catList.Contains(t.TypeId)));
+            return myEntities.Torrents.Where(t => (t.Title.Contains(search) && choosenType.catList.Contains(t.TypeId))).OrderByDescending(t => t.UpdateDateTime);
         }
         else if (search != null && choosenType.catList == null)
         {
-            return myEntities.Torrents.Where(t => t.Title.Contains(search));
+            return myEntities.Torrents.Where(t => t.Title.Contains(search)).OrderByDescending(t => t.UpdateDateTime);
         }
         else if (search == null && choosenType.catList != null)
         {
-            return myEntities.Torrents.Where(t => choosenType.catList.Contains(t.TypeId));
+            return myEntities.Torrents.Where(t => choosenType.catList.Contains(t.TypeId)).OrderByDescending(t => t.UpdateDateTime);
         }
         else
         {
-            return myEntities.Torrents;
+            return myEntities.Torrents.OrderByDescending(t => t.UpdateDateTime);
         }
     }
 

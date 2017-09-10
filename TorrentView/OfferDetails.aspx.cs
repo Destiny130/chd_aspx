@@ -112,23 +112,21 @@ public partial class TorrentView_OfferDeatils : BasePage
 
     protected void UploadButton_Click(object sender, EventArgs e)
     {
+        OfferTorrent offer = myEntities.OfferTorrents.Where(o => o.Id == _id).Single();
+        Torrent torrent = new Torrent();
+        torrent.TypeId = offer.TypeId;
+        torrent.Title = offer.Title;
+        torrent.SubTitle = offer.SubTitle;
+        torrent.CreateDateTime = offer.CreateDateTime;
+        torrent.UpdateDateTime = offer.UpdateDateTime;
+        torrent.Body = offer.Body;
+        torrent.AuthorName = offer.AuthorName;
+        torrent.TorrentFileUrl = offer.TorrentFileUrl;
+        myEntities.Torrents.Add(torrent);
+        myEntities.OfferTorrents.Remove(offer);
         try
         {
-            OfferTorrent offer = myEntities.OfferTorrents.Where(o => o.Id == _id).Single();
-            Torrent torrent = new Torrent();
-            torrent.TypeId = offer.TypeId;
-            torrent.Title = offer.Title;
-            torrent.SubTitle = offer.SubTitle;
-            torrent.CreateDateTime = offer.CreateDateTime;
-            torrent.UpdateDateTime = offer.UpdateDateTime;
-            torrent.Body = offer.Body;
-            torrent.AuthorName = offer.AuthorName;
-            torrent.TorrentFileUrl = offer.TorrentFileUrl;
-            myEntities.Torrents.Add(torrent);
-            myEntities.OfferTorrents.Remove(offer);
             myEntities.SaveChanges();
-
-            Response.Redirect(string.Format("~/TorrentView/TorrentDetails.aspx?Id={0}", torrent.Id));
         }
         catch (DbEntityValidationException ex)
         {
@@ -144,6 +142,10 @@ public partial class TorrentView_OfferDeatils : BasePage
             }
             ErrorSubmitTable.Visible = true;
             ErrorSubmit.Text = errors.ToString();
+        }
+        finally
+        {
+            Response.Redirect(string.Format("~/TorrentView/TorrentDetails.aspx?Id={0}", torrent.Id));
         }
     }
 }

@@ -61,13 +61,15 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell CssClass="offeraddleft">标题<span style="color: red;">*</span></asp:TableCell><asp:TableCell CssClass="offeraddright">
-                <asp:TextBox ID="TorrentTitle" runat="server" Width="400px" Height="20px"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="TitleValidator" runat="server" ErrorMessage="Enter a title" ControlToValidate="TorrentTitle"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="TorrentTitle" runat="server" Width="400px" Height="20px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="TitleValidator" runat="server" ErrorMessage="Enter a title" ControlToValidate="TorrentTitle" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RangeValidator runat="server" ID="TitleRangeVal" ErrorMessage="Title is too long" ControlToValidate="TorrentTitle" ForeColor="Red"></asp:RangeValidator>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell CssClass="offeraddleft">副标题</asp:TableCell><asp:TableCell CssClass="offeraddright">
-                <asp:TextBox ID="TorrentSubtitle" runat="server" Width="400px" Height="20px"></asp:TextBox><br />
+                <asp:TextBox ID="TorrentSubtitle" runat="server" Width="400px" Height="20px"></asp:TextBox>
+                <asp:RangeValidator runat="server" ID="SubtitleRangeVal" ErrorMessage="Subtitle is too long" ControlToValidate="TorrentSubtitle" ForeColor="Red"></asp:RangeValidator><br />
                 (将在种子页面种子标题下显示。如720p @ 4615 kbps - DTS 5.1 @ 1536 kbps)
             </asp:TableCell>
         </asp:TableRow>
@@ -86,7 +88,7 @@
         <asp:TableRow>
             <asp:TableCell CssClass="offeraddleft" valign="top">简介<span style="color: red;">*</span></asp:TableCell><asp:TableCell CssClass="offeraddright">
                 <asp:TextBox ID="SummaryText" runat="server" TextMode="MultiLine"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="BodyValidator" runat="server" ErrorMessage="Enter a body" ControlToValidate="SummaryText"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="BodyValidator" runat="server" ErrorMessage="Enter a body" ControlToValidate="SummaryText" ForeColor="Red"></asp:RequiredFieldValidator>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
