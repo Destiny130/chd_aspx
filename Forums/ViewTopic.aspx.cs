@@ -107,10 +107,14 @@ public partial class Forums_ViewTopic : BasePage
             forumReply.ViewForumId = _id;
             forumReply.CreateDateTime = DateTime.Now;
             forumReply.UpdateDateTime = DateTime.Now;
-            forumReply.UserName = User.Identity.Name;
+            if (Request.IsAuthenticated)
+            {
+                forumReply.UserName = User.Identity.Name;
+            }
             myEntities.ForumReplies.Add(forumReply);
         }
         myEntities.SaveChanges();
+        Response.Redirect(string.Format("~/Forums/ViewTopic.aspx?Id={0}#{1}", _id, forumReply.Id));
     }
 
     // The id parameter name should match the DataKeyNames value set on the control
@@ -123,20 +127,16 @@ public partial class Forums_ViewTopic : BasePage
 
     protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
     {
+        ForumReply forumReply = (ForumReply)e.Item.DataItem;
+        string userName = forumReply.UserName;
+
         int[] RepliesIdList = myEntities.ForumReplies.Where(f => f.ViewForumId == _id).Select(f => f.Id).ToArray();
-        int c = Array.IndexOf(RepliesIdList, (DataBinder.Eval(e.Item.DataItem, "Id"))) + 1;
+        int c = Array.IndexOf(RepliesIdList, forumReply.Id) + 1;
         Button editButton = e.Item.FindControl("EditButton") as Button;
         Button editTopicButton = e.Item.FindControl("EditTopicButton") as Button;
         Button deleteButton = e.Item.FindControl("DeleteButton") as Button;
         Button deleteTopicButton = e.Item.FindControl("DeleteTopicButton") as Button;
         Button quoteButton = e.Item.FindControl("QuoteButton") as Button;
-        //TableRow replyTableRow = e.Item.FindControl("ReplyTableRow") as TableRow;
-        //TableRow loginRow = e.Item.FindControl("LoginRow") as TableRow;
-        int forumReplyId = Convert.ToInt32(((Button)editButton).CommandArgument);
-        string userName = (from f in myEntities.ForumReplies
-                           join u in myEntities.Users on f.UserName equals u.UserName
-                           where f.Id == forumReplyId
-                           select u.UserName).Single();
 
         switch (e.Item.ItemType)
         {
@@ -192,7 +192,7 @@ public partial class Forums_ViewTopic : BasePage
 
         myEntities.SaveChanges();
 
-        //删除后重定向到ViewF页面
+        //删除后重定向到View页面
         int id = myEntities.Fora.Where(f => f.Id == viewForum.ForumId).Select(f => f.Id).Single();
         Response.Redirect(string.Format("~/Forums/ViewForum.aspx?Id={0}", id));
     }

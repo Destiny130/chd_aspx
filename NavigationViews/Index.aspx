@@ -16,7 +16,7 @@
                     极致完美，年度DIY原盘大赏<br />
                     &nbsp;&nbsp;1、活动简介为丰富本站资源，鼓励原创发掘DIY人才，本站将举办DIY原盘有奖活动。<br />
                     &nbsp;&nbsp;2、活动时间2017年7月、8月、9月<br />
-                    &nbsp;&nbsp;3、活动规则：<a href="../Forums/ViewTopic.aspx?Id=13">../Forums/ViewTopic.aspx?Id=13</a>
+                    &nbsp;&nbsp;3、活动规则：<a href="../Forums/ViewTopic.aspx?Id=13" style="font-size: 18px; color: red; font-weight: bolder;">Forums/ViewTopic.aspx?Id=13</a>
                     <br />
                 </div>
             </td>
