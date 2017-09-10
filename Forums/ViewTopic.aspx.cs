@@ -22,9 +22,9 @@ public partial class Forums_ViewTopic : BasePage
         if (_id > -1)
         {
             ViewForum viewForum = myEntities.ViewForums.Where(v => v.Id == _id).Single();
-            Label1.Text = myEntities.Fora.Where(f => f.Id == viewForum.ForumId).Select(f => f.ForumName).Single();
+            ForumNameLabel.Text = " --> " + myEntities.Fora.Where(f => f.Id == viewForum.ForumId).Select(f => f.ForumName).Single();
 
-            Label2.Text = viewForum.Title.ToString();
+            TopicTitleLabel.Text = " --> " + viewForum.Title.ToString();
             viewForum.ViewCount++;
             myEntities.SaveChanges();
             ViewCountLabel.Text = viewForum.ViewCount.ToString();
@@ -33,9 +33,15 @@ public partial class Forums_ViewTopic : BasePage
         {
             countAndNewTopic.Visible = false;
             ListView1.Visible = false;
-            Label1.Visible = false;
-            Label2.Visible = false;
+            ForumNameLabel.Visible = false;
+            TopicTitleLabel.Visible = false;
             noTopic.Visible = true;
+        }
+
+
+        if (Request.IsAuthenticated)
+        {
+            NewReplyButton.Visible = true;
         }
     }
 
@@ -74,6 +80,23 @@ public partial class Forums_ViewTopic : BasePage
         return c;
     }
 
+    protected void ListView1_PreRender(object sender, EventArgs e)
+    {
+        TableRow replyRow = ListView1.InsertItem.FindControl("ReplyRow") as TableRow;
+        TableRow loginRow = ListView1.InsertItem.FindControl("LoginRow") as TableRow;
+        if (Request.IsAuthenticated)
+        {
+            if (replyRow != null)
+            {
+                replyRow.Visible = true;
+            }
+            if (loginRow != null)
+            {
+                loginRow.Visible = false;
+            }
+        }
+    }
+
     public void ListView1_InsertItem()
     {
         var forumReply = new ForumReply();
@@ -106,6 +129,9 @@ public partial class Forums_ViewTopic : BasePage
         Button editTopicButton = e.Item.FindControl("EditTopicButton") as Button;
         Button deleteButton = e.Item.FindControl("DeleteButton") as Button;
         Button deleteTopicButton = e.Item.FindControl("DeleteTopicButton") as Button;
+        Button quoteButton = e.Item.FindControl("QuoteButton") as Button;
+        //TableRow replyTableRow = e.Item.FindControl("ReplyTableRow") as TableRow;
+        //TableRow loginRow = e.Item.FindControl("LoginRow") as TableRow;
         int forumReplyId = Convert.ToInt32(((Button)editButton).CommandArgument);
         string userName = (from f in myEntities.ForumReplies
                            join u in myEntities.Users on f.UserName equals u.UserName
@@ -136,6 +162,13 @@ public partial class Forums_ViewTopic : BasePage
                     if (deleteButton != null)
                     {
                         deleteButton.Visible = true;
+                    }
+                }
+                if (Request.IsAuthenticated)
+                {
+                    if (quoteButton != null)
+                    {
+                        quoteButton.Visible = true;
                     }
                 }
                 break;
@@ -215,5 +248,4 @@ public partial class Forums_ViewTopic : BasePage
     {
         Response.Redirect(string.Format("ForumReply.aspx?Id={0}", _id));
     }
-
 }

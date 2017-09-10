@@ -53,67 +53,63 @@
         <h4>用户评论</h4>
     </div>
     <br />
-    <asp:UpdatePanel runat="server">
-        <ContentTemplate>
-            <asp:ListView ID="CommentList" runat="server" DataKeyNames="Id" SelectMethod="CommentList_GetData" ItemType="TorrentComment" InsertItemPosition="LastItem" InsertMethod="CommentList_InsertItem" DeleteMethod="CommentList_DeleteItem" OnItemDataBound="CommentList_ItemDataBound">
-                <InsertItemTemplate>
-                    <br />
-                    <asp:Table runat="server" CssClass="table90">
-                        <asp:TableRow>
-                            <asp:TableCell CssClass="table90 textcenter">
-                                <br />
-                                <li class="table50 border padding10 textcenter">快速评论<br />
-                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# BindItem.Summary %>' TextMode="MultiLine" Width="450px" Height="145px"></asp:TextBox><br />
-                                    <asp:Button ID="InsertButton" runat="server" Text="添加" CommandName="Insert" />
-                                </li>
-                            </asp:TableCell>
-                        </asp:TableRow>
-                    </asp:Table>
-                    <br />
-                </InsertItemTemplate>
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# BindItem.Summary %>' TextMode="MultiLine" Width="650px" Height="145px"></asp:TextBox><br />
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <div class="border">
-                        <li class="table100">
-                            <table class="table98  padding5 textleft">
-                                <tr>
-                                    <td class="padding10" id='<%# Item.Id %>'>
-                                        <asp:Label ID="Label3" runat="server" Text='<%# "#" + Item.Id %>' />
-                                        <asp:HyperLink ID="AuthorLink" runat="server" >
-                                            <asp:Label ID="Label4" runat="server" Text='<%# Item.AuthorName %>' />
-                                        </asp:HyperLink>
-                                        <asp:Label ID="Label5" runat="server" Text='<%# Item.CreateDateTime %>' /></td>
-                                </tr>
-                            </table>
-                            <table class="table98 textleft">
-                                <tr>
-                                    <td style="width: 151px;" class="borderdeepcolor" valign="top">
-                                        <asp:Image runat="server" ID="AvatarImg" Width="150px"  /><br />
-                                    </td>
-                                    <td class="borderdeepcolor padding10" style="vertical-align: top;">
-                                        <asp:Label ID="Label7" runat="server" Text='<%# BindItem.Summary %>' />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="borderdeepcolor padding5"></td>
-                                    <td class="borderdeepcolor padding5 textright">
-                                        <asp:Button ID="DeleteCommentButton" runat="server" Text="删除" CommandName="Delete" CausesValidation="false" CommandArgument='<%# Item.Id %>' Visible="false" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <br />
+    <asp:ListView ID="CommentList" runat="server" DataKeyNames="Id" SelectMethod="CommentList_GetData" ItemType="TorrentComment" InsertItemPosition="LastItem" InsertMethod="CommentList_InsertItem" DeleteMethod="CommentList_DeleteItem" OnItemDataBound="CommentList_ItemDataBound">
+        <InsertItemTemplate>
+            <br />
+            <asp:Table runat="server" CssClass="table90">
+                <asp:TableRow>
+                    <asp:TableCell CssClass="table90 textcenter">
+                        <br />
+                        <li class="table50 border padding10 textcenter">快速评论<br />
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# BindItem.Summary %>' TextMode="MultiLine" Width="450px" Height="145px"></asp:TextBox><br />
+                            <asp:Button ID="InsertButton" runat="server" Text="添加" CommandName="Insert" />
                         </li>
-                    </div>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <ul class="ItemContainer table90">
-                        <li runat="server" id="itemPlaceHolder" />
-                    </ul>
-                </LayoutTemplate>
-            </asp:ListView>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+            <br />
+        </InsertItemTemplate>
+        <EditItemTemplate>
+            <asp:TextBox ID="TextBox2" runat="server" Text='<%# BindItem.Summary %>' TextMode="MultiLine" Width="650px" Height="145px"></asp:TextBox><br />
+        </EditItemTemplate>
+        <ItemTemplate>
+            <div class="border">
+                <li class="table100">
+                    <table class="table98  padding5 textleft">
+                        <tr>
+                            <td class="padding10" id='<%# Item.Id %>'>
+                                <asp:Label ID="Label3" runat="server" Text='<%# "#" + Item.Id %>' />
+                                <asp:HyperLink ID="AuthorLink" runat="server">
+                                    <asp:Label ID="Label4" runat="server" Text='<%# Item.AuthorName %>' />
+                                </asp:HyperLink>
+                                <asp:Label ID="Label5" runat="server" Text='<%# Item.CreateDateTime %>' /></td>
+                        </tr>
+                    </table>
+                    <table class="table98 textleft">
+                        <tr>
+                            <td style="width: 151px;" class="borderdeepcolor" valign="top">
+                                <asp:Image runat="server" ID="AvatarImg" Width="150px" /><br />
+                            </td>
+                            <td class="borderdeepcolor padding10" style="vertical-align: top;">
+                                <asp:Label ID="Label7" runat="server" Text='<%# BindItem.Summary %>' />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="borderdeepcolor padding5"></td>
+                            <td class="borderdeepcolor padding5 textright">
+                                <asp:Button ID="DeleteCommentButton" runat="server" Text="删除" CommandName="Delete" CausesValidation="false" CommandArgument='<%# Item.Id %>' Visible="false" />
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                </li>
+            </div>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <ul class="ItemContainer table90">
+                <li runat="server" id="itemPlaceHolder" />
+            </ul>
+        </LayoutTemplate>
+    </asp:ListView>
 </asp:Content>
 

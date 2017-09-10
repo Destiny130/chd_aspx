@@ -42,7 +42,11 @@
                 </td>
             </tr>
             <tr>
-                <td class="padding10 textleft border">已有账号？点击 <asp:LinkButton runat="server" Text="登录" PostBackUrl="~/Login.aspx" /></td>
+                <td class="padding10 textleft border">已有账号？点击
+                    <a href="Login.aspx">登录</a><br />
+                    <br />
+                    Go back to <a href="NavigationViews/Index.aspx" class="bold underline">CHD</a>.
+                </td>
             </tr>
         </table>
     </form>

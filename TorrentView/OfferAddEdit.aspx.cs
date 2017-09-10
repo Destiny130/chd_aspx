@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.Entity.Validation;
+using System.Text;
 
 public partial class NavigationViews_OfferAddEdit : BasePage
 {
@@ -39,7 +41,7 @@ public partial class NavigationViews_OfferAddEdit : BasePage
     {
         return string.Format("OfferDetails.aspx?Id={0}", _id);
     }
-    
+
     protected void SubmitButton_Click(object sender, EventArgs e)
     {
         OfferTorrent offer;
@@ -80,9 +82,29 @@ public partial class NavigationViews_OfferAddEdit : BasePage
         offer.Title = TorrentTitle.Text;
         offer.SubTitle = TorrentSubtitle.Text;
         offer.Body = BodyText.Text;
-        myEntities.SaveChanges();
-
-        Response.Redirect(string.Format("~/TorrentView/OfferDetails.aspx?Id={0}", offer.Id));
+        try
+        {
+            myEntities.SaveChanges();
+        }
+        catch (DbEntityValidationException ex)
+        {
+            StringBuilder errors = new StringBuilder();
+            IEnumerable<DbEntityValidationResult> validationResult = ex.EntityValidationErrors;
+            foreach (DbEntityValidationResult result in validationResult)
+            {
+                ICollection<DbValidationError> validationError = result.ValidationErrors;
+                foreach (DbValidationError err in validationError)
+                {
+                    errors.Append(err.PropertyName + ":" + err.ErrorMessage + "\r\n");
+                }
+            }
+            ErrorSubmitTable.Visible = true;
+            ErrorSubmit.Text = errors.ToString();
+        }
+        finally
+        {
+            Response.Redirect(string.Format("~/TorrentView/OfferDetails.aspx?Id={0}", offer.Id));
+        }
     }
 
     protected void OfferDeatilsLink_Click(object sender, EventArgs e)

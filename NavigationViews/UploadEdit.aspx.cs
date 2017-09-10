@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.Entity.Validation;
+using System.Text;
 
 public partial class Views_UploadEdit : BasePage
 {
@@ -81,9 +82,28 @@ public partial class Views_UploadEdit : BasePage
             torrent.TorrentFileUrl = virtualFolder + fileName;
             myEntities.SaveChanges();
         }
-
-        myEntities.SaveChanges();
-        Response.Redirect(string.Format("~/TorrentView/TorrentDetails.aspx?Id={0}", torrent.Id));
-
+        try
+        {
+            myEntities.SaveChanges();
+        }
+        catch (DbEntityValidationException ex)
+        {
+            StringBuilder errors = new StringBuilder();
+            IEnumerable<DbEntityValidationResult> validationResult = ex.EntityValidationErrors;
+            foreach (DbEntityValidationResult result in validationResult)
+            {
+                ICollection<DbValidationError> validationError = result.ValidationErrors;
+                foreach (DbValidationError err in validationError)
+                {
+                    errors.Append(err.PropertyName + ":" + err.ErrorMessage + "\r\n");
+                }
+            }
+            ErrorSubmitTable.Visible = true;
+            ErrorSubmit.Text = errors.ToString();
+        }
+        finally
+        {
+            Response.Redirect(string.Format("~/TorrentView/TorrentDetails.aspx?Id={0}", torrent.Id));
+        }
     }
 }

@@ -82,15 +82,22 @@ public partial class NavigationViews_TorrentDetails : BasePage
     protected void DownLoadButton_Click(object sender, EventArgs e)
     {
         Torrent torrent = myEntities.Torrents.Where(t => t.Id == _id).Single();
-        string fileName = torrent.TorrentFileUrl.Replace("~/TorrentFolder/", "");
-        string filePath = Server.MapPath(torrent.TorrentFileUrl);
+        string fileName = torrent.TorrentFileUrl.Replace("~/TorrentFolder/", ""); //下载的文件名
+        string filePath = Server.MapPath(torrent.TorrentFileUrl);                 //文件路径
 
         FileStream fs = new FileStream(filePath, FileMode.Open);
         byte[] bytes = new byte[(int)fs.Length];
         fs.Read(bytes, 0, bytes.Length);
         fs.Close();
         Response.ContentType = "Utorrent/torrent";
-        Response.AddHeader("Content-Disposition", "attachment; filename=" + HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8));
+        if (Request.ServerVariables["http_user_agent"].ToLower().IndexOf("firefox") == -1)
+        {
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8));
+        }
+        else
+        {
+            Response.AddHeader("Content-Disposition", "attachment;filename=\"" + fileName + "\"");
+        }
         Response.BinaryWrite(bytes);
         Response.Flush();
         Response.End();
@@ -136,6 +143,7 @@ public partial class NavigationViews_TorrentDetails : BasePage
         {
             case ListViewItemType.DataItem:
                 {
+
                     TorrentComment comment = (TorrentComment)e.Item.DataItem;
                     User user = myEntities.Users.Where(u => u.UserName == comment.AuthorName).Single();
                     HyperLink authorLink = e.Item.FindControl("AuthorLink") as HyperLink;
@@ -158,10 +166,9 @@ public partial class NavigationViews_TorrentDetails : BasePage
                             deleteButton.Visible = true;
                         }
                     }
+
                 }
                 break;
         }
     }
-
-
 }

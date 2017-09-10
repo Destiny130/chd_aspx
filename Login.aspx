@@ -41,7 +41,8 @@
                     </asp:LoginView>
                     <br />
                     <asp:LoginStatus ID="LoginStatus1" runat="server" />
-
+                    <br />
+                    <div class="textleft">You can go back to <a href="NavigationViews/Index.aspx" class="bold underline">CHD</a>.</div>
                 </td>
             </tr>
         </table>

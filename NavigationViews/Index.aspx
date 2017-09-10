@@ -5,7 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent1" runat="Server">
     <table class="indextable">
         <tr>
-            <td class="h3Border"><h3>最近消息</h3></td>
+            <td class="h3Border">
+                <h3>最近消息</h3>
+            </td>
         </tr>
         <tr>
             <td class="border" style="padding: 10px 40px;">2017.06.20 - <b>极致完美，年度DIY原盘大赏</b><br />
@@ -14,30 +16,18 @@
                     极致完美，年度DIY原盘大赏<br />
                     &nbsp;&nbsp;1、活动简介为丰富本站资源，鼓励原创发掘DIY人才，本站将举办DIY原盘有奖活动。<br />
                     &nbsp;&nbsp;2、活动时间2017年7月、8月、9月<br />
-                    &nbsp;&nbsp;3、活动规则：http://chdbits.co/forums.php?action=viewtopic&topicid=4940
-                    <br />
-                    <br />
+                    &nbsp;&nbsp;3、活动规则：<a href="../Forums/ViewTopic.aspx?Id=13">../Forums/ViewTopic.aspx?Id=13</a>
                     <br />
                 </div>
-                2017.06.20 - <b>CHDBits录制人员招聘公告</b><br />
-                2017.06.20 - <b>CHDBits字幕组招募公告</b>
             </td>
         </tr>
     </table>
     <br />
     <table class="indextable">
         <tr>
-            <td class="h3Border"><h3>热门</h3></td>
-        </tr>
-        <tr>
-            <td class="border" style="text-align: center; padding: 10px 20px;">image
+            <td class="h3Border">
+                <h3>投票</h3>
             </td>
-        </tr>
-    </table>
-    <br />
-    <table class="indextable">
-        <tr>
-            <td class="h3Border"><h3>投票</h3></td>
         </tr>
         <tr>
             <td class="border" style="text-align: center; padding: 10px 20px;">
@@ -69,7 +59,9 @@
     <br />
     <table class="indextable" style="background-color: #bccad6;">
         <tr>
-            <td class="h3Border"><h3>站点数据</h3></td>
+            <td class="h3Border">
+                <h3>站点数据</h3>
+            </td>
         </tr>
         <tr>
             <td class="border" style="text-align: center; padding: 16px 20px;">
@@ -177,7 +169,9 @@
     <br />
     <table class="indextable" style="background-color: #bccad6;">
         <tr>
-            <td class="h3Border"><h3>免责条款</h3></td>
+            <td class="h3Border">
+                <h3>免责条款</h3>
+            </td>
         </tr>
         <tr>
             <td class="border" style="text-align: center; padding: 16px 20px; text-align: left;">本站列出的文件并没有保存在本站的服务器上。本站仅负责连接，我们对被传播文件的内容一无所知。本站的链接均由用户自发提供。CHDBits的管理员无法对用户的提交内容或其他行为负责。您不能使用CHDBits传播或下载任何您没有使用许可的文件或材料，由此引起的后果由您自己承担。</td>
@@ -186,7 +180,9 @@
     <br />
     <table class="indextable" style="background-color: #bccad6;">
         <tr>
-            <td class="h3Border"><h3>友情链接</h3></td>
+            <td class="h3Border">
+                <h3>友情链接</h3>
+            </td>
         </tr>
         <tr>
             <td class="border" style="text-align: center; padding: 16px 20px; text-align: left; color: black;">
@@ -195,6 +191,6 @@
         </tr>
     </table>
     <br />
-    <div class="indextable" style="text-align:center;">获得本站最佳效果，请使用Internet Explorer 8或Firefox且使用大于1024*768的分辨率。推荐BT客户端为 Azureus或uTorrent</div>
+    <div class="indextable" style="text-align: center;">获得本站最佳效果，请使用Internet Explorer 8或Firefox且使用大于1024*768的分辨率。推荐BT客户端为 Azureus或uTorrent</div>
 </asp:Content>
 

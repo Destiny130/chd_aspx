@@ -30,9 +30,9 @@
             </table>
         </header>
         <div id="nav">
-            <table style="width: 100%;">
-                <tr>
-                    <td id="navBlock">
+            <asp:Table runat="server" ID="NavigationTable" Width="100%">
+                <asp:TableRow>
+                    <asp:TableCell ID="navBlock">
                         <ul id="navigation">
                             <li>
                                 <a href="../NavigationViews/Index.aspx">首  页</a>
@@ -56,10 +56,21 @@
                                 <a href="../NavigationViews/Rules.aspx">规则</a>
                             </li>
                         </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow ID="LoginLink" Visible="true">
+                    <asp:TableCell>
+                        <table class="table90 border" style="margin-bottom: 10px;">
+                            <tr>
+                                <td class="padding5 ">You Can Login <a href="../Login.aspx" class="bold underline">Here</a>.</td>
+                                <td class="textright padding5 ">
+                                    <asp:Label ID="navtime1" runat="server" Text=""></asp:Label></td>
+                            </tr>
+                        </table>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow ID="detailsTableRow" Visible="false">
+                    <asp:TableCell>
                         <table id="detailsTable">
                             <tr>
                                 <td id="navLeft">欢迎回来,
@@ -74,19 +85,23 @@
                                 <span style="color: #1900d1;">邀请</span> [<a href="../UserDetailsViews/Invite.aspx">发送</a>]:
                                 <asp:Label runat="server" ID="Invite" />
                                 <br />
-                                <span style="color: #1900d1;">分享率</span>： <asp:Label runat="server" ID="Radio" /> <span style="color: green;">上传量</span>： <asp:Label runat="server" ID="Uploaded" />GB
-                                <span style="color: darkred;">下载量</span>： <asp:Label runat="server" ID="Downloaded" />GB <span style="color: #1900d1;">当前活动</span>： <span style="color: green;"><b>↑</b></span> 24 <span style="color: red;"><b>↓</b></span> 0
+                                <span style="color: #1900d1;">分享率</span>：
+                                <asp:Label runat="server" ID="Radio" />
+                                <span style="color: green;">上传量</span>：
+                                <asp:Label runat="server" ID="Uploaded" />GB
+                                <span style="color: darkred;">下载量</span>：
+                                <asp:Label runat="server" ID="Downloaded" />GB <span style="color: #1900d1;">当前活动</span>： <span style="color: green;"><b>↑</b></span> 24 <span style="color: red;"><b>↓</b></span> 0
                                 <span style="color: #1900d1;">可连接</span>：<span style="color: green;"><b>是</b></span> <span style="color: #1900d1;">连接数</span>：无限制
                             </span>
                                 </td>
-                                <td id="navRight"><a href="../UserDetailsViews/Blackjack.aspx">21点</a>  | <a href="../UserDetailsViews/Bakatest.aspx">每日签到</a>  | 当前时间：<asp:Label ID="navtime" runat="server" Text=""></asp:Label>
+                                <td id="navRight"><a href="../UserDetailsViews/Blackjack.aspx">21点</a>  | <a href="../UserDetailsViews/Bakatest.aspx">每日签到</a>  | 当前时间：<asp:Label ID="navtime2" runat="server" Text=""></asp:Label>
                                     <br />
                                     <a href="../UserDetailsViews/Messages.aspx">发件箱</a>  <a href="../UserDetailsViews/Messages.aspx">收件箱</a> <a href="../UserDetailsViews/Friends.aspx">社交</a> <a href="../UserDetailsViews/Getrss.aspx">RSS订阅</a> </td>
                             </tr>
                         </table>
-                    </td>
-                </tr>
-            </table>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
         </div>
         <div id="mainContent">
             <table style="width: 100%;">

@@ -31,7 +31,7 @@
           <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
           <Property Name="ReplyContent" Type="nvarchar(max)" />
           <Property Name="ViewForumId" Type="int" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="Memberships">
           <Key>
@@ -464,7 +464,7 @@
           <Property Name="UpdateDateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ReplyContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ViewForumId" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ViewForum" Relationship="myCHDModel.FK_ForumReply_ViewForum" FromRole="ForumReply" ToRole="ViewForum" />
         </EntityType>
         <EntityType Name="Membership">

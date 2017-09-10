@@ -21,6 +21,11 @@ public partial class Forums_ViewForum : BasePage
         {
             Label5.Text = myEntities.Fora.Where(f => f.Id == _id).Select(f => f.ForumName).Single();
         }
+
+        if(Request.IsAuthenticated)
+        {
+            NewTopicButton.Visible = true;
+        }
     }
     //要用querystring获取当前页面的id，然后才能进行后期绑定处理
 

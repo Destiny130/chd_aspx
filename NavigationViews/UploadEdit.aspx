@@ -98,13 +98,13 @@
         </asp:TableRow>
     </asp:Table>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    <asp:Table runat="server" ID="ErrorSubmitTable" Visible="false" CssClass="table90 textcenter">
+        <asp:TableRow>
+            <asp:TableCell CssClass="border padding10">
+                ERROR!<br />
+                <asp:label runat="server" ID="ErrorSubmit"/>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
 </asp:Content>
 

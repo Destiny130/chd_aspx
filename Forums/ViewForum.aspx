@@ -12,7 +12,7 @@
     </div>
     <br />
     <div class="table90 textright padding10">
-        <asp:Button ID="NewTopicButton" runat="server" Text="新主题" OnClick="NewTopicButton_Click" />
+        <asp:Button ID="NewTopicButton" runat="server" Text="新主题" OnClick="NewTopicButton_Click" Visible="false" />
     </div>
     <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" SelectMethod="GridView1_GetData" CssClass="table90 padding5 border textcenter" PageSize="10" AllowPaging="True" AllowCustomPaging="False" ItemType="ViewForum">
