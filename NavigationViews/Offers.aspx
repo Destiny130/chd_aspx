@@ -31,7 +31,7 @@
                     </tr>
                     <tr>
                         <td style="padding: 3px; font-weight: bold;">
-                            <asp:LinkButton runat="server" PostBackUrl="~/TorrentView/OfferAddEdit.aspx" Text="添加候选" />
+                            <asp:LinkButton runat="server" ID="AddOfferLink" Text="添加候选" OnClick="AddOfferLink_Click" />
                         </td>
                     </tr>
                     <tr>
@@ -39,7 +39,7 @@
                             <table style="margin: auto;">
                                 <tr>
                                     <td>搜索：
-                                    <asp:TextBox ID="SearchText" runat="server" ></asp:TextBox>
+                                    <asp:TextBox ID="SearchText" runat="server"></asp:TextBox>
                                         <asp:DropDownList ID="TypeList" runat="server" Width="120px" SelectMethod="TypeList_GetData" AppendDataBoundItems="True" DataTextField="Tname" DataValueField="Id" OnDataBound="TypeList_DataBound">
                                             <asp:ListItem Value="">(显示全部)</asp:ListItem>
                                         </asp:DropDownList>

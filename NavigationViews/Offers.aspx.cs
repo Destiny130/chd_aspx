@@ -105,4 +105,16 @@ public partial class Views_Offers : BasePage
             TypeList.SelectedIndex = typeid;
         }
     }
+
+    protected void AddOfferLink_Click(object sender, EventArgs e)
+    {
+        if (!Request.IsAuthenticated)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
+        else
+        {
+            Response.Redirect("~/TorrentView/OfferAddEdit.aspx");
+        }
+    }
 }
